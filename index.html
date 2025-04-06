@@ -5,29 +5,69 @@
   <title>Send WhatsApp Message</title>
   <style>
     body {
-      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('Monarch_FINAL_Camera 06.jpg') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      margin-top: 100px;
+      justify-content: center;
     }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      text-align: center;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    h2 {
+      color: #1c3faa;
+      margin-bottom: 20px;
+    }
+
     input {
-      padding: 10px;
+      padding: 12px;
       font-size: 16px;
-      width: 300px;
-      margin-bottom: 10px;
+      width: 100%;
+      border: 2px solid #1c3faa;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      outline: none;
     }
+
+    input:focus {
+      border-color: #3c7cff;
+      box-shadow: 0 0 5px #3c7cff77;
+    }
+
     button {
-      padding: 10px 20px;
+      padding: 12px 25px;
       font-size: 16px;
+      background-color: #1c3faa;
+      color: white;
+      border: none;
+      border-radius: 8px;
       cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #3c7cff;
     }
   </style>
 </head>
 <body>
-  <h2>Send Monarc Nexus Info on WhatsApp</h2>
-  <input type="text" id="phoneNumber" placeholder="Enter phone number (e.g. 7874777470)" />
-  <button onclick="sendMessage()">Send Message</button>
+  <div class="container">
+    <h2>Send Monarc Nexus Info on WhatsApp</h2>
+    <input type="text" id="phoneNumber" placeholder="Enter phone number (e.g. 7874777470)" />
+    <button onclick="sendMessage()">Send Message</button>
+  </div>
 
   <script>
     const message = `📄 Monarc Nexus – Project Details
