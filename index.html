@@ -1,5 +1,36 @@
-<script>
-  const message = `📄 Monarc Nexus – Project Details
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Send WhatsApp Message</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 100px;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      width: 300px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h2>Send Monarc Nexus Info on WhatsApp</h2>
+  <input type="text" id="phoneNumber" placeholder="Enter phone number (e.g. 7874777470)" />
+  <button onclick="sendMessage()">Send Message</button>
+
+  <script>
+    const message = `📄 Monarc Nexus – Project Details
 
 🔗 Brochure : https://drive.google.com/file/d/1dg7O0S5iR6bMYz27tjxADo2Rc9bAcTnl/view?usp=drivesdk
 
@@ -19,21 +50,23 @@
 ▪18 Meter Road ↔ 200 ft Ring Road
 ▪12 Meter Road – Intern TP Road`;
 
-  function sendMessage() {
-    const phone = document.getElementById("phoneNumber").value.trim();
-    if (!phone) {
-      alert("Please enter a phone number.");
-      return;
+    function sendMessage() {
+      const phone = document.getElementById("phoneNumber").value.trim();
+      if (!phone) {
+        alert("Please enter a phone number.");
+        return;
+      }
+
+      const fullNumber = phone.startsWith('+') ? phone : '91' + phone;
+      const url = `https://wa.me/${fullNumber}?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank");
     }
 
-    const fullNumber = phone.startsWith('+') ? phone : '91' + phone;
-    const url = `https://wa.me/${fullNumber}?text=${encodeURIComponent(message)}`;
-    window.open(url, "_blank");
-  }
-
-  document.getElementById("phoneNumber").addEventListener("keypress", function (e) {
-    if (e.key === "Enter") {
-      sendMessage();
-    }
-  });
-</script>
+    document.getElementById("phoneNumber").addEventListener("keypress", function (e) {
+      if (e.key === "Enter") {
+        sendMessage();
+      }
+    });
+  </script>
+</body>
+</html>
