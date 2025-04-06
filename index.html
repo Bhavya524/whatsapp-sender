@@ -1,0 +1,39 @@
+<script>
+  const message = `📄 Monarc Nexus – Project Details
+
+🔗 Brochure : https://drive.google.com/file/d/1dg7O0S5iR6bMYz27tjxADo2Rc9bAcTnl/view?usp=drivesdk
+
+📍 Site Location : https://maps.app.goo.gl/MgcsscnUBq8jWr2L6
+
+📸 (Image for reference attached below)
+
+🏢 Project Name: Monarc Nexus
+
+📍 Residential + Commercial
+     | 14-Story Premium Development
+
+🚦 Prime 3-Side Road Connectivity:
+
+ Connected Roads
+▪36 Meter Road – Ahm-Palanpur Hwy Rd ↔ SG Hwy
+▪18 Meter Road ↔ 200 ft Ring Road
+▪12 Meter Road – Intern TP Road`;
+
+  function sendMessage() {
+    const phone = document.getElementById("phoneNumber").value.trim();
+    if (!phone) {
+      alert("Please enter a phone number.");
+      return;
+    }
+
+    const fullNumber = phone.startsWith('+') ? phone : '91' + phone;
+    const url = `https://wa.me/${fullNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+  }
+
+  document.getElementById("phoneNumber").addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+      sendMessage();
+    }
+  });
+</script>
