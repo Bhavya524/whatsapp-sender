@@ -10,7 +10,7 @@
       margin: 0;
       padding: 0;
       font-family: 'Poppins', sans-serif;
-      background: url('Monarch_FINAL_Camera 06.jpg');
+      background: url('monarc_nightlook.jpeg');
       background-size: cover;
       height: 100vh;
       display: flex;
@@ -45,20 +45,20 @@
       letter-spacing: 1px;
       text-transform: uppercase;
       margin-bottom: 10px;
-      background: linear-gradient(to right, #1a2980, #26d0ce);
+      background: linear-gradient(to right,  #ffffff, #06ddff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .colorful-text {
-  font-size: 22px;
-  font-weight: 600;
-  background: linear-gradient(to right, #1a2980, #26d0ce);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: 0.5px;
-  margin-bottom: 25px;
-}
+      font-size: 22px;
+      font-weight: 600;
+      background: linear-gradient(to right,  #ffffff, #06ddff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 0.5px;
+      margin-bottom: 25px;
+    }
 
     input {
       padding: 14px;
@@ -96,15 +96,15 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <h2>MONARC NEXUS</h2>
-    <div class="subheading colorful-text">Send Project Info on WhatsApp</div>
-    <input type="text" id="phoneNumber" placeholder="Enter phone number (e.g. 7874777470)" />
-    <button onclick="sendMessage()">Send Message</button>
-  </div>
+<div class="container">
+  <h2>MONARC NEXUS</h2>
+  <div class="subheading colorful-text">Send Project Info on WhatsApp</div>
+  <input type="text" id="phoneNumber" placeholder="Enter phone number (e.g. 7874777470)" />
+  <button onclick="sendMessage()">Send Message</button>
+</div>
 
-  <script>
-    const message = `📄 Monarc Nexus – Project Details
+<script>
+  const message = `📄 Monarc Nexus – Project Details
 
 🔗 Brochure : https://drive.google.com/file/d/1dg7O0S5iR6bMYz27tjxADo2Rc9bAcTnl/view?usp=drivesdk
 
@@ -124,23 +124,23 @@
 ▪18 Meter Road ↔ 200 ft Ring Road
 ▪12 Meter Road – Intern TP Road`;
 
-    function sendMessage() {
-      const phone = document.getElementById("phoneNumber").value.trim();
-      if (!phone) {
-        alert("Please enter a phone number.");
-        return;
-      }
-
-      const fullNumber = phone.startsWith('+') ? phone : '91' + phone;
-      const url = `https://wa.me/${fullNumber}?text=${encodeURIComponent(message)}`;
-      window.open(url, "_blank");
+  function sendMessage() {
+    const phone = document.getElementById("phoneNumber").value.trim();
+    if (!phone) {
+      alert("Please enter a phone number.");
+      return;
     }
 
-    document.getElementById("phoneNumber").addEventListener("keypress", function (e) {
-      if (e.key === "Enter") {
-        sendMessage();
-      }
-    });
-  </script>
+    const fullNumber = phone.startsWith('+') ? phone : '91' + phone;
+    const url = `https://wa.me/${fullNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+  }
+
+  document.getElementById("phoneNumber").addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+      sendMessage();
+    }
+  });
+</script>
 </body>
 </html>
